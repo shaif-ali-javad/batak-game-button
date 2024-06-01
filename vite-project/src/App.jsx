@@ -1,37 +1,21 @@
 import React, { useState } from 'react';
 import './App.css';
-import axios from 'axios';
+
+import {HashRouter as Router, Routes,Route} from 'react-router-dom';
+
+import Timer from './components/Timer.jsx';
+import Userlogin from './components/userlogin.jsx';
 
 function App() {
-  const [name, setName] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post('http://localhost:3000/register', { name })
-      .then(result => { console.log(result) 
-        navigation("/timer")
-      })
-      .catch(error => { console.error(error) });
-  };
-
-  const handleChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const goFullScreen = () => {
-    window.electron.setFullScreen(true);
-  };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to Batak game</h1>
-        <form onSubmit={handleSubmit}>
-          <input type="text" value={name} onChange={handleChange} /><br />
-          <button type='submit' onClick={goFullScreen}>Login</button>
-        </form>
-      </header>
-    </div>
+
+      <Router>
+        <Routes>
+          <Route path='/' element={<Userlogin />} />
+          <Route path='/timer' element={<Timer />} />
+        </Routes>
+      </Router>
   );
 }
 
