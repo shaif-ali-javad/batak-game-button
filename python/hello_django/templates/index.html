@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="h">
+        <h1>Title : {{title}}</h1>
+        <p>Summary : {{summary}}</p>
+        <h4>Year : {{year}}</h4>
+        {% if sucess %}
+        <p>movie was a sucess at the time</p>
+        {% else %}
+        <p>movie was a failure</p>
+        {% endif %}
+    </div>
+</body>
+</html>
