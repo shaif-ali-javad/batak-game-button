@@ -12,8 +12,8 @@ function App() {
 
       <Router>
         <Routes>
-          <Route path='/' element={<Userlogin />} />
-          <Route path='/timer' element={<Timer />} />
+          {/* <Route path='/' element={<Userlogin />} /> */}
+          <Route path='/' element={<Timer />} />
         </Routes>
       </Router>
   );
